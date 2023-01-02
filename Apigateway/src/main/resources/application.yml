@@ -1,0 +1,25 @@
+
+spring:
+  cloud:
+   gateway:
+     routes:
+        - id: admin
+          uri: http://localhost:8081
+          predicates:
+            - Path=/admins/**
+        - id: order
+          uri: http://localhost:8082
+          predicates:
+            - Path=/orders/**
+        - id: user
+          uri: http://localhost:8083
+          predicates:
+            - Path=/users/**
+        - id: washer
+          uri: http://localhost:8085
+          predicates:
+            - Path=/washers/**
+        - id: Payment-Service
+          uri: http://localhost:5008
+          predicates:
+            - Path=/payment/**    
